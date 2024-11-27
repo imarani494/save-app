@@ -137,3 +137,67 @@ body {
     font-size: 0.9rem;
   }
 }
+
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+.pagination button {
+  padding: 12px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #33a060; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+
+.pagination button:hover:not(:disabled) {
+  background-color: #28a745;
+  transform: scale(1.05);
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+.pagination button:active {
+  background-color: #218838; 
+  transform: scale(0.98); 
+}
+
+
+.pagination span {
+  font-size: 16px;
+  font-weight: normal;
+  color: #333;
+}
+
