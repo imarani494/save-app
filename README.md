@@ -48,7 +48,7 @@ Replace the placeholder your_site_key in ReCaptcha.jsx with your Google ReCAPTCH
 Backend
 Replace the placeholder your_secret_key in index.js with your Google ReCAPTCHA Secret Key.
 Project Structure
-graphql
+![alt text](./save-app/src/assets/![alt text](./flight/src/assets/flight.png))
 Copy code
 .
 ├── src
