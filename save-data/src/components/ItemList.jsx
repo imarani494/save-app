@@ -1,5 +1,6 @@
+import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
+import '../styles/ItemList.css';
 
 const ItemList = ({ items, onDragEnd }) => (
   <DragDropContext onDragEnd={onDragEnd}>
