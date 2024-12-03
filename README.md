@@ -57,7 +57,8 @@ src/
 │   ├── SearchBar.css       # Styles for SearchBar component
 ├── App.js                  # Main application component
 ├── index.js                # Entry point
-![alt text](./save-data/src/assets/Screenshot (1487).png)
+![App Screenshot](src/assets/Screenshot (1487).png)
+
 
 Client-Side Pagination:
 
