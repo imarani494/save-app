@@ -1,65 +1,77 @@
-React Google ReCAPTCHA Integration
-This project demonstrates how to integrate Google ReCAPTCHA into a React application. It includes client-side implementation using react-google-recaptcha and server-side token verification using Node.js.
+# Savecom React App
 
-Features
-Google ReCAPTCHA v2 or v3 integration in a React app.
-Responsive UI for a seamless user experience.
-Server-side token verification using the Google ReCAPTCHA API.
-Basic example for form validation.
-Technologies Used
-Frontend: React, react-google-recaptcha, CSS
-Backend: Node.js, Express
-API: Google ReCAPTCHA verification API
-Getting Started
-1. Prerequisites
-Node.js installed on your machine.
-A Google ReCAPTCHA site key and secret key. You can generate these from the Google ReCAPTCHA Admin Console.
-2. Installation
-Frontend
-Clone the repository:
-bash
-Copy code
+This is a single-page React application demonstrating skills in UI development, API integration, drag-and-drop functionality, and third-party API integration using Google reCAPTCHA. The app fetches and displays a list of items, includes client-side search and pagination, and allows users to rearrange items within the current page using drag-and-drop.
 
-cd recaptcha-integration
-Install dependencies:
-bash
-Copy code
-npm install
-Start the development server:
-bash
-Copy code
-npm start
-Backend
-Navigate to the server folder:
-bash
-Copy code
-cd server
-Install dependencies:
-bash
-Copy code
-npm install
-Start the server:
-bash
-Copy code
-node index.js
-3. Configuration
-Frontend
-Replace the placeholder your_site_key in ReCaptcha.jsx with your Google ReCAPTCHA Site Key.
-Backend
-Replace the placeholder your_secret_key in index.js with your Google ReCAPTCHA Secret Key.
-Project Structure
-![alt text](./save-data/src/assets/![alt text](./flight/src/assets/flight.png))
-Copy code
-.
-├── src
-│   ├── components
-│   │   ├── ReCaptcha.jsx  # ReCAPTCHA Component
-│   │   ├── ItemList.jsx   # Item List with drag-and-drop
-│   │   └── Pagination.jsx # Pagination Component
-│   ├── App.jsx            # Main Application
-│   ├── index.css          # Global Styles
-│   └── index.js           # App Entry Point
-├── server
-│   ├── index.js           # Server for ReCAPTCHA Verification
-├── package.json           # Project Dependencies
-└── README.md              # Project Documentation
+## Features
+
+
+1. **Item List with Pagination**: Displays items fetched from a mock API, with pagination (10 items per page).
+2. **Search Filter**: Includes a text-based search to filter items on the client side.
+3. **Drag and Drop**: Allows users to rearrange items within the current page using drag-and-drop functionality.
+4. **Google reCAPTCHA Integration**: Secures the app by verifying the user before loading items.
+5. **Optimized Performance**: Utilizes efficient state management and follows React best practices.
+
+
+
+## Technologies Used
+
+- React (functional components and hooks)
+- React Beautiful DnD (for drag-and-drop functionality)
+- Google reCAPTCHA (for user verification)
+- CSS for styling
+- Fake Store API (mock API for fetching items)
+
+
+
+
+## Installation
+
+Follow these steps to run the project locally:
+
+1. **Clone the repository**:
+   ```bash
+  
+
+   Usage
+
+
+Open the app in your browser at http://localhost:3000/.
+Verify yourself using Google reCAPTCHA.
+Use the search bar to filter items by title.
+Use the pagination controls to navigate through pages.
+Drag and drop items to rearrange them within the current page.
+
+
+src/
+├── components/
+│   ├── ItemList.js         # Component for displaying items with drag-and-drop
+│   ├── Pagination.js       # Component for pagination controls
+│   ├── SearchBar.js        # Component for the search input
+│   ├── ReCaptcha.js        # Component for Google reCAPTCHA integration
+├── api/
+│   ├── fetchItems.js       # API call to fetch mock data
+├── styles/
+│   ├── App.css             # Global app styles
+│   ├── ItemList.css        # Styles for ItemList component
+│   ├── Pagination.css      # Styles for Pagination component
+│   ├── SearchBar.css       # Styles for SearchBar component
+├── App.js                  # Main application component
+├── index.js                # Entry point
+![alt text](./save-data/src/assets/Screenshot (1487).png)
+
+Client-Side Pagination:
+
+Handles pagination logic efficiently by slicing the filtered list of items.
+Search Optimization:
+
+Filters items based on the search term using Array.prototype.filter and a toLowerCase comparison for case-insensitive matching.
+Drag-and-Drop:
+
+Integrates react-beautiful-dnd for a smooth drag-and-drop experience.
+Only updates the current page's item order to minimize state re-renders.
+Google reCAPTCHA:
+
+Verifies users before fetching data, ensuring the application is secure.
+CSS Optimization:
+
+Uses responsive layouts and consistent spacing with gap and flexbox.
