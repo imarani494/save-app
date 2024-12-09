@@ -1,36 +1,22 @@
 import React from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import '../styles/ItemList.css';
 
-const ItemList = ({ items, onDragEnd }) => (
-  <DragDropContext onDragEnd={onDragEnd}>
-    <Droppable droppableId="items">
-      {(provided) => (
-        <div
-          {...provided.droppableProps}
-          ref={provided.innerRef}
-          className="item-list"
-        >
-          {items.map((item, index) => (
-            <Draggable key={item.id} draggableId={item.id.toString()} index={index}>
-              {(provided) => (
-                <div
-                  {...provided.draggableProps}
-                  {...provided.dragHandleProps}
-                  ref={provided.innerRef}
-                  className="item"
-                >
-                  <img src={item.image} alt={item.title} className="item-image" />
-                  <p className="item-title">{item.title}</p>
-                </div>
-              )}
-            </Draggable>
-          ))}
-          {provided.placeholder}
-        </div>
-      )}
-    </Droppable>
-  </DragDropContext>
+const ItemList = ({ items, onDragStart, onDragOver, onDrop, draggedOverIndex, onDragEnd }) => (
+  <div className="item-list">
+    {items.map((item, index) => (
+      <div
+        key={item.id}
+        draggable
+        onDragStart={(e) => onDragStart(e, item, index)}
+        onDragOver={(e) => onDragOver(e, index)}
+        onDrop={(e) => onDrop(e, item, index)}
+        onDrag={(e) => e.preventDefault()} 
+        className={`item ${draggedOverIndex === index ? 'dragged-over' : ''}`}
+      >
+        <img src={item.image} alt={item.title} className="item-image" />
+        <p className="item-title">{item.title}</p>
+      </div>
+    ))}
+  </div>
 );
 
 export default ItemList;
